@@ -16,7 +16,7 @@ class DrumMachine extends React.Component {
     }
   
     updateDisplay(clipId) {
-      console.log('Updating display: ' + clipId);
+      // console.log('Updating display: ' + clipId);
       this.setState({
         display: clipId
       });
@@ -30,14 +30,14 @@ class DrumMachine extends React.Component {
   }
     
     render() {
-        const pads = Constants.padList.map(p => <DrumPad 
+        const pads = Constants.PAD_LIST.map(p => <DrumPad 
                                         keyFace={p.keyFace} 
                                         src={p.src} 
                                         clipId={p.clipId}
                                         updateDisplay={this.updateDisplay}
                                         volume={this.state.volume} /> );
         return (
-            <div className="row">
+            <div className="row" id="drum-machine">
                 <div className="col">
                     <div className="row align-items-center">
                         <div className="col-sm-12">

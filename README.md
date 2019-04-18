@@ -4,6 +4,8 @@ You can view a live demo here: [http://beats.jo3.io](http://beats.jo3.io)
 
 Feel free to clone this repo and experiment with it locally via the following commands.
 
+### `npm install`
+
 ### `npm start`
 
 Runs the app in the development mode.<br>

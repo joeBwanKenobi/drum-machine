@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Constants from '../Constants/Constants';
 
 class DrumPad extends React.Component {
     constructor(props) {
@@ -16,24 +17,23 @@ class DrumPad extends React.Component {
     }
 
     handleClick(e) {
-      console.log(e.target.children[0]);
+    //   console.log(e.target.children[0]);
       let currentClip = e.target.children[0];
       currentClip.currentTime = 0;
-      console.log(this.props.volume);
+    //   console.log(this.props.volume);
       currentClip.volume = this.props.volume;
       currentClip.play();
-      console.log(e.target.id);
+    //   console.log(e.target.id);
       this.updateDisplay(e.target.id);
     }
 
     keyPress(e) {
-      console.log(String.fromCharCode(e.keyCode).toUpperCase());
-      let currentClip = document.getElementById(String.fromCharCode(e.keyCode).toUpperCase());
-      currentClip.currentTime = 0;
-      // currentClip.volume = this.state.volume;
-      currentClip.play();
-      console.log(currentClip.parentElement.id);
-      this.updateDisplay(currentClip.parentElement.id);
+        if (Constants.PAD_KEYS.indexOf(String.fromCharCode(e.keyCode)) > -1) {
+            let currentClip = document.getElementById(String.fromCharCode(e.keyCode).toUpperCase());
+            currentClip.currentTime = 0;
+            currentClip.play();
+            this.updateDisplay(currentClip.parentElement.id);
+        }
     }
   
     updateDisplay(clipId) {
@@ -46,7 +46,7 @@ class DrumPad extends React.Component {
             <div className="col-sm-4" id="kick12" >
                 <button className="drum-pad" id={this.props.clipId} onClick={this.handleClick}>
                 {this.props.keyFace}
-                <audio id={this.props.keyFace} class="clip border border-dark rounded" src={this.props.src} type="audio/wav">
+                <audio id={this.props.keyFace} className="clip border border-dark rounded" src={this.props.src} type="audio/wav">
                     Your browser does not support HTML5 Audio
                 </audio>
                 </button>

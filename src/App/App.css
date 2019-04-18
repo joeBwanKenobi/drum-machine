@@ -6,8 +6,16 @@ button:focus, a:focus {
   outline: 0;
 }
 
+a {
+  color: rgb(56, 56, 56);
+}
+
+a:hover {
+  color: rgb(235, 133, 0);
+}
+
 div#drum-machine {
-  margin-top: 2%;
+  margin: 5% auto;
   background-color: black;
   width: 750px;
   height: auto;
@@ -67,16 +75,44 @@ div#drum-machine {
   border-radius: 4px;
   font-size: 25px;
   text-align: center;
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, .7);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
 }
 
 section.volume > p {
-  margin-bottom: -10px;
+  margin-bottom: 5px;
 }
 
-
 #volSlider {
-  position: relative;
-  right: 8px;
-  height: 100%;
-  padding: 0;
+  -webkit-appearance: none;
+  width: 80%;
+  height: 15px;
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-bottom: 10px;
+}
+
+#volSlider:hover {
+  opacity: 1;
+}
+
+#volSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  background: rgb(61, 61, 61);
+  cursor: pointer;
+}
+
+#volSlider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: rgb(61, 61, 61);
+  cursor: pointer;
+  outline: none;
 }
