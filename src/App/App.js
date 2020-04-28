@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className="container">
         <DrumMachine />
-        <p className="text-center"><b><a href="https://gitlab.jo3.io/joebwankenobi/javascript-drum-machine/tree/master" target="_blank"><i className="fa fa-gitlab"></i>&nbsp;View Source</a></b></p>
+        <p className="text-center"><b><a href="https://github.com/joeBwanKenobi/drum-machine.git" target="_blank"><i className="fa fa-github"></i>&nbsp;View Source</a></b></p>
       </div>
     );
   }
